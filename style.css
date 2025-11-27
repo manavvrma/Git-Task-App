@@ -1,8 +1,8 @@
 /* 1. Reset & Base Variables */
 :root {
-  --bg-color: #efc3c3;
-  --card-color: #e8dbdb;
-  --text-primary: #0a0a0a;
+  --bg-color: #0a0a0a;
+  --card-color: #168b72;
+  --text-primary: #ededed;
   --text-secondary: #555555;
   --accent: #d70000;
   --radius: 12px;
