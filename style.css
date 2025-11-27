@@ -1,10 +1,10 @@
 /* 1. Reset & Base Variables */
 :root {
-  --bg-color: #0a0a0a;
-  --card-color: #161616;
-  --text-primary: #ededed;
+  --bg-color: #efc3c3;
+  --card-color: #e8dbdb;
+  --text-primary: #0a0a0a;
   --text-secondary: #555555;
-  --accent: #00ffea;
+  --accent: #d70000;
   --radius: 12px;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
