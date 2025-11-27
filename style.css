@@ -1,7 +1,7 @@
 /* 1. Reset & Base Variables */
 :root {
-  --bg-color: #ffffff;
-  --card-color: #f8eaea;
+  --bg-color: #ecc2c2;
+  --card-color: #ebb3b3;
   --text-primary: #000000;
   --text-secondary: #555555;
   --accent: #d70000;
@@ -78,7 +78,7 @@ p.date {
 
 .task-item:hover {
   transform: translateY(-2px);
-  background-color: #d83e3e;
+  background-color: #e93636;
 }
 
 /* 6. Custom Checkbox Logic */
