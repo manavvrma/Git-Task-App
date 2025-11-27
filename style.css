@@ -1,0 +1,160 @@
+/* 1. Reset & Base Variables */
+:root {
+  --bg-color: #0a0a0a;
+  --card-color: #161616;
+  --text-primary: #ededed;
+  --text-secondary: #555555;
+  --accent: #ffffff;
+  --radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+/* 2. Layout & Typography */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg-color); /* Blends with background for seamless look */
+}
+
+/* 3. Header Styling */
+header {
+  margin-bottom: 40px;
+  padding-left: 10px;
+  border-left: 2px solid var(--accent);
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+p.date {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* 4. Task List Styling */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 5. The Task Item (Label acts as container) */
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--card-color);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  background-color: #1f1f1f;
+}
+
+/* 6. Custom Checkbox Logic */
+input[type="checkbox"] {
+  display: none; /* Hide default ugly checkbox */
+}
+
+/* The custom circle */
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #333;
+  border-radius: 50%;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+/* The text */
+.task-text {
+  font-size: 0.95rem;
+  transition: var(--transition);
+  font-weight: 400;
+}
+
+/* 7. Checked State Animations */
+input:checked + .checkmark {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+input:checked + .checkmark::after {
+  content: "";
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid var(--bg-color);
+  border-bottom: 2px solid var(--bg-color);
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+/* When checked, target the sibling span text */
+input:checked ~ .task-text {
+  color: var(--text-secondary);
+  text-decoration: line-through;
+}
+
+/* 8. The "Fake" Add Button (Visual only since no JS) */
+.add-task-wrapper {
+  margin-top: 40px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.fake-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.fake-button {
+  background: var(--accent);
+  color: var(--bg-color);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

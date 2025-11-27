@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Task</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>Tasks</h1>
+        <p class="date">Thursday, Nov 27</p>
+      </header>
+
+      <ul class="task-list">
+        <li>
+          <label class="task-item">
+            <input type="checkbox" />
+            <div class="checkmark"></div>
+            <span class="task-text">Review design system</span>
+          </label>
+        </li>
+
+        <li>
+          <label class="task-item">
+            <input type="checkbox" />
+            <div class="checkmark"></div>
+            <span class="task-text">Reply to emails</span>
+          </label>
+        </li>
+
+        <li>
+          <label class="task-item">
+            <input type="checkbox" checked />
+            <div class="checkmark"></div>
+            <span class="task-text">Update portfolio</span>
+          </label>
+        </li>
+
+        <li>
+          <label class="task-item">
+            <input type="checkbox" />
+            <div class="checkmark"></div>
+            <span class="task-text">Gym workout</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="add-task-wrapper">
+        <input type="text" class="fake-input" placeholder="Add a new task..." />
+        <button class="fake-button">+</button>
+      </div>
+    </div>
+  </body>
+</html>
