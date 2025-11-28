@@ -121,7 +121,6 @@ input:checked + .checkmark::after {
   transform: rotate(-45deg) translate(1px, -1px);
 }
 
-/* When checked, target the sibling span text */
 input:checked ~ .task-text {
   color: var(--text-secondary);
   text-decoration: line-through;
