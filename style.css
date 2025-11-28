@@ -4,7 +4,7 @@
   --card-color: #ebb3b3;
   --text-primary: #000000;
   --text-secondary: #555555;
-  --accent: #d70000;
+  --accent: #da4a4a;
   --radius: 12px;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -78,7 +78,7 @@ p.date {
 
 .task-item:hover {
   transform: translateY(-2px);
-  background-color: #e93636;
+  background-color: #da4a4a;
 }
 
 /* 6. Custom Checkbox Logic */
