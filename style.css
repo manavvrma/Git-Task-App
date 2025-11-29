@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap");
 
 :root {
-  --bg-color: #f4f1ea; /* Creamy paper color */
-  --text-color: #5c5a53; /* Softer dark grey */
-  --accent-color: #2c2c2c; /* Sharp black for the logo */
-  --input-placeholder: #b0aba0;
-  --task-bg: #fcfbf9;
-  --border-line: #dcd8cf;
+  --bg-color: #f4f1ea;
+  --text-color: #4a4945;
+  --accent-color: #1a1a1a;
+  --input-placeholder: #8e857b;
+  --task-bg: #f2ede7;
+  --border-line: #d7d2c8;
 }
 
 * {
@@ -23,7 +23,7 @@ body {
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
   background-blend-mode: multiply;
-  /* Make texture very subtle */
+
   opacity: 1;
 
   color: var(--text-color);
@@ -35,7 +35,6 @@ body {
   padding-top: 80px;
 }
 
-/* Container to limit width */
 .container {
   width: 100%;
   max-width: 500px;
@@ -43,7 +42,6 @@ body {
   text-align: center;
 }
 
-/* LOGO SECTION */
 .logo-box {
   border: 2px solid var(--accent-color);
   display: inline-block;
@@ -66,7 +64,7 @@ body {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #888;
+  color: #bc4141;
   margin-bottom: 60px;
 }
 
@@ -121,6 +119,7 @@ input[type="text"]:focus {
   transition: transform 0.2s ease, opacity 0.3s ease;
   cursor: pointer;
   position: relative;
+  border-radius: 10px;
 }
 
 .task-item:hover {
@@ -132,7 +131,6 @@ input[type="text"]:focus {
   text-decoration: line-through;
 }
 
-/* CUSTOM RADIO/CHECKBOX */
 .circle-check {
   width: 24px;
   height: 24px;
