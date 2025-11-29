@@ -31,12 +31,12 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 .container {
   width: 100%;
-  max-width: 400px;
+  max-width: 90%;
   text-align: center;
 
   background-color: rgba(244, 241, 234, 0.51); /* 93% opaque paper color */
