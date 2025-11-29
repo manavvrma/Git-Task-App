@@ -112,7 +112,7 @@ input[type="text"]:focus {
   background-color: var(--task-bg);
   padding: 20px 25px;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: flex-start;
   gap: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
