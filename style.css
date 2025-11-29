@@ -17,7 +17,6 @@
 
 body {
   background-color: var(--bg-color);
-  /* Subtle texture overlay */
   background-image: radial-gradient(#b0aba0 0.5px, transparent 0.5px),
     radial-gradient(#b0aba0 0.5px, var(--bg-color) 0.5px);
   background-size: 20px 20px;
@@ -55,7 +54,6 @@ body {
   font-weight: 400;
   color: var(--accent-color);
   letter-spacing: 0.1em;
-  /* Using a system font that supports Kanji well if available */
   font-family: "Yu Mincho", "SimSun", serif;
 }
 
@@ -68,7 +66,6 @@ body {
   margin-bottom: 60px;
 }
 
-/* INPUT SECTION */
 .input-group {
   width: 100%;
   margin-bottom: 40px;
@@ -98,7 +95,6 @@ input[type="text"]:focus {
   border-bottom-color: #a09d95;
 }
 
-/* TASK LIST */
 .task-list {
   list-style: none;
   width: 100%;
@@ -114,7 +110,6 @@ input[type="text"]:focus {
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
-  /* Subtle shadow/border */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
   transition: transform 0.2s ease, opacity 0.3s ease;
   cursor: pointer;
@@ -158,7 +153,6 @@ input[type="text"]:focus {
   letter-spacing: 0.05em;
 }
 
-/* Animation for new tasks */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -174,7 +168,6 @@ input[type="text"]:focus {
   animation: fadeIn 0.4s ease-out forwards;
 }
 
-/* Remove button hidden by default, visible on hover (desktop) or touch */
 .delete-btn {
   margin-left: auto;
   border: none;
