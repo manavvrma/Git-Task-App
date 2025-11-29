@@ -1,159 +1,194 @@
-/* 1. Reset & Base Variables */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap");
+
 :root {
-  --bg-color: #ecc2c2;
-  --card-color: #ebb3b3;
-  --text-primary: #000000;
-  --text-secondary: #555555;
-  --accent: #da4a4a;
-  --radius: 12px;
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --bg-color: #f4f1ea; /* Creamy paper color */
+  --text-color: #5c5a53; /* Softer dark grey */
+  --accent-color: #2c2c2c; /* Sharp black for the logo */
+  --input-placeholder: #b0aba0;
+  --task-bg: #fcfbf9;
+  --border-line: #dcd8cf;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: none;
 }
 
-/* 2. Layout & Typography */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
   background-color: var(--bg-color);
-  color: var(--text-primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-}
+  /* Subtle texture overlay */
+  background-image: radial-gradient(#b0aba0 0.5px, transparent 0.5px),
+    radial-gradient(#b0aba0 0.5px, var(--bg-color) 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  background-blend-mode: multiply;
+  /* Make texture very subtle */
+  opacity: 1;
 
-.app-container {
-  width: 100%;
-  max-width: 400px;
-  background: var(--bg-color); /* Blends with background for seamless look */
-}
-
-/* 3. Header Styling */
-header {
-  margin-bottom: 40px;
-  padding-left: 10px;
-  border-left: 2px solid var(--accent);
-}
-
-h1 {
-  font-weight: 300;
-  font-size: 1.5rem;
-  letter-spacing: -0.02em;
-}
-
-p.date {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  margin-top: 5px;
-  font-weight: 500;
-}
-
-/* 4. Task List Styling */
-.task-list {
-  list-style: none;
+  color: var(--text-color);
+  font-family: "Cormorant Garamond", serif;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px;
 }
 
-/* 5. The Task Item (Label acts as container) */
+/* Container to limit width */
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* LOGO SECTION */
+.logo-box {
+  border: 2px solid var(--accent-color);
+  display: inline-block;
+  padding: 10px 25px;
+  margin-bottom: 15px;
+  background: transparent;
+}
+
+.kanji {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--accent-color);
+  letter-spacing: 0.1em;
+  /* Using a system font that supports Kanji well if available */
+  font-family: "Yu Mincho", "SimSun", serif;
+}
+
+.app-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #888;
+  margin-bottom: 60px;
+}
+
+/* INPUT SECTION */
+.input-group {
+  width: 100%;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+input[type="text"] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-line);
+  padding: 15px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+  color: var(--input-placeholder);
+  font-style: italic;
+}
+
+input[type="text"]:focus {
+  border-bottom-color: #a09d95;
+}
+
+/* TASK LIST */
+.task-list {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 .task-item {
+  background-color: var(--task-bg);
+  padding: 20px 25px;
   display: flex;
   align-items: center;
-  padding: 16px;
-  background-color: var(--card-color);
-  border-radius: var(--radius);
+  justify-content: flex-start;
+  gap: 20px;
+  /* Subtle shadow/border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, opacity 0.3s ease;
   cursor: pointer;
-  transition: var(--transition);
   position: relative;
-  overflow: hidden;
 }
 
 .task-item:hover {
-  transform: translateY(-2px);
-  background-color: #da4a4a;
+  transform: translateY(-1px);
 }
 
-/* 6. Custom Checkbox Logic */
-input[type="checkbox"] {
-  display: none; /* Hide default ugly checkbox */
-}
-
-/* The custom circle */
-.checkmark {
-  width: 20px;
-  height: 20px;
-  border: 1.5px solid #333;
-  border-radius: 50%;
-  margin-right: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-}
-
-/* The text */
-.task-text {
-  font-size: 0.95rem;
-  transition: var(--transition);
-  font-weight: 400;
-}
-
-/* 7. Checked State Animations */
-input:checked + .checkmark {
-  background-color: var(--accent);
-  border-color: var(--accent);
-}
-
-input:checked + .checkmark::after {
-  content: "";
-  width: 8px;
-  height: 4px;
-  border-left: 2px solid var(--bg-color);
-  border-bottom: 2px solid var(--bg-color);
-  transform: rotate(-45deg) translate(1px, -1px);
-}
-
-input:checked ~ .task-text {
-  color: var(--text-secondary);
+.task-item.completed {
+  opacity: 0.5;
   text-decoration: line-through;
 }
 
-/* 8. The "Fake" Add Button (Visual only since no JS) */
-.add-task-wrapper {
-  margin-top: 40px;
-  border-top: 1px solid #222;
-  padding-top: 20px;
-  display: flex;
-  gap: 10px;
-}
-
-.fake-input {
-  flex-grow: 1;
-  background: transparent;
-  border: none;
-  color: var(--text-primary);
-  font-size: 0.9rem;
-}
-
-.fake-button {
-  background: var(--accent);
-  color: var(--bg-color);
-  border: none;
-  width: 30px;
-  height: 30px;
+/* CUSTOM RADIO/CHECKBOX */
+.circle-check {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #999;
   border-radius: 50%;
-  font-weight: bold;
+  flex-shrink: 0;
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.task-item:hover .circle-check {
+  border-color: #666;
+}
+
+.task-item.completed .circle-check {
+  background-color: #ddd;
+  border-color: #ddd;
+}
+
+.task-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #4a4a4a;
+  letter-spacing: 0.05em;
+}
+
+/* Animation for new tasks */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-item.new {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Remove button hidden by default, visible on hover (desktop) or touch */
+.delete-btn {
+  margin-left: auto;
+  border: none;
+  background: none;
+  color: #ccc;
   font-size: 1.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  padding: 0 10px;
+}
+
+.task-item:hover .delete-btn {
+  opacity: 1;
 }

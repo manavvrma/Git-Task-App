@@ -3,75 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minimal Task</title>
+    <title>Kanso Tasks</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="app-container">
-      <header>
-        <h1>Tasks</h1>
-        <p class="date">Thursday, Nov 29</p>
-      </header>
+    <div class="container">
+      <!-- Logo Section -->
+      <div class="logo-box">
+        <span class="kanji">簡素</span>
+      </div>
+      <div class="app-title">Kanso Tasks</div>
 
-      <ul class="task-list">
-        <li>
-          <label class="task-item">
-            <input type="checkbox" />
-            <div class="checkmark"></div>
-            <span class="task-text">Review Pull Requests</span>
-          </label>
-        </li>
+      <!-- Input Section -->
+      <div class="input-group">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="What must be done today?"
+          autocomplete="off"
+        />
+      </div>
 
-        <li>
-          <label class="task-item">
-            <input type="checkbox" />
-            <div class="checkmark"></div>
-            <span class="task-text">Reply to Twitter DMs</span>
-          </label>
+      <!-- Task List -->
+      <ul class="task-list" id="taskList">
+        <!-- Initial static tasks from the image -->
+        <li class="task-item" onclick="toggleTask(this)">
+          <div class="circle-check"></div>
+          <span class="task-text">Breathe deeply</span>
+          <button class="delete-btn" onclick="deleteTask(event, this)">
+            ×
+          </button>
         </li>
-
-        <li>
-          <label class="task-item">
-            <input type="checkbox" checked />
-            <div class="checkmark"></div>
-            <span class="task-text">Update portfolio</span>
-          </label>
-        </li>
-
-        <li>
-          <label class="task-item">
-            <input type="checkbox" />
-            <div class="checkmark"></div>
-            <span class="task-text">Gym workout</span>
-          </label>
-        </li>
-        <li>
-          <label class="task-item">
-            <input type="checkbox" />
-            <div class="checkmark"></div>
-            <span class="task-text">Make Project</span>
-          </label>
-        </li>
-        <li>
-          <label class="task-item">
-            <input type="checkbox" />
-            <div class="checkmark"></div>
-            <span class="task-text">Update LinkedIn</span>
-          </label>
-        </li>
-        <li>
-          <label class="task-item">
-            <input type="checkbox" />
-            <div class="checkmark"></div>
-            <span class="task-text">Make Drawings</span>
-          </label>
+        <li class="task-item" onclick="toggleTask(this)">
+          <div class="circle-check"></div>
+          <span class="task-text">Drink tea</span>
+          <button class="delete-btn" onclick="deleteTask(event, this)">
+            ×
+          </button>
         </li>
       </ul>
-
-      <div class="add-task-wrapper">
-        <input type="text" class="fake-input" placeholder="Add a new task..." />
-        <button class="fake-button">+</button>
-      </div>
     </div>
+
+    <script></script>
   </body>
 </html>
