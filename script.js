@@ -48,12 +48,12 @@ const wallpaperBtn = document.getElementById("wallpaperBtn");
 let currentTheme = 0;
 
 const themes = [
-  {
-    bg: "#f4f1ea",
-    image:
-      "radial-gradient(#b0aba0 0.5px, transparent 0.5px), radial-gradient(#b0aba0 0.5px, #f4f1ea 0.5px)",
-    size: "20px 20px",
-  },
+  // {
+  //   bg: "#f4f1ea",
+  //   image:
+  //     "radial-gradient(#b0aba0 0.5px, transparent 0.5px), radial-gradient(#b0aba0 0.5px, #f4f1ea 0.5px)",
+  //   size: "20px 20px",
+  // },
 
   {
     bg: "#fdfbf7",
@@ -62,34 +62,34 @@ const themes = [
     size: "20px 20px",
   },
 
-  {
-    bg: "#ffffff",
+  // {
+  //   bg: "#ffffff",
 
-    image: "url('assets/1.jpg')",
+  //   image: "url('assets/1.jpg')",
 
-    size: "cover",
-  },
-  {
-    bg: "#ffffff",
+  //   size: "cover",
+  // },
+  // {
+  //   bg: "#ffffff",
 
-    image: "url('assets/2.jpg')",
+  //   image: "url('assets/2.jpg')",
 
-    size: "cover",
-  },
-  {
-    bg: "#ffffff",
+  //   size: "cover",
+  // },
+  // {
+  //   bg: "#ffffff",
 
-    image: "url('assets/3.jpg')",
+  //   image: "url('assets/3.jpg')",
 
-    size: "cover",
-  },
-  {
-    bg: "#ffffff",
+  //   size: "cover",
+  // },
+  // {
+  //   bg: "#ffffff",
 
-    image: "url('assets/4.jpg')",
+  //   image: "url('assets/4.jpg')",
 
-    size: "cover",
-  },
+  //   size: "cover",
+  // },
 ];
 
 wallpaperBtn.addEventListener("click", () => {
