@@ -48,12 +48,12 @@ const wallpaperBtn = document.getElementById("wallpaperBtn");
 let currentTheme = 0;
 
 const themes = [
-  // {
-  //   bg: "#f4f1ea",
-  //   image:
-  //     "radial-gradient(#b0aba0 0.5px, transparent 0.5px), radial-gradient(#b0aba0 0.5px, #f4f1ea 0.5px)",
-  //   size: "20px 20px",
-  // },
+  {
+    bg: "#f4f1ea",
+    image:
+      "radial-gradient(#b0aba0 0.5px, transparent 0.5px), radial-gradient(#b0aba0 0.5px, #f4f1ea 0.5px)",
+    size: "20px 20px",
+  },
 
   {
     bg: "#fdfbf7",
